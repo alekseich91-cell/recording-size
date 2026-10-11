@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f3ef">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Вес записи">
+<meta name="description" content="Посчитайте объём многодорожечного аудио и видео перед записью. Бесплатный калькулятор без загрузки файлов.">
+<title>Вес записи — аудио и видео</title>
+<style>
+:root{color-scheme:light;--bg:#f5f3ef;--paper:#fff;--ink:#262b28;--muted:#6c736c;--line:#e7e8e2;--accent:#d4512e;--green:#254e3c}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}main{max-width:1080px;margin:0 auto;padding:36px 28px 24px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}.brand{font-weight:750;letter-spacing:-.5px;display:flex;gap:10px;align-items:center}.mark{width:31px;height:31px;border-radius:9px;background:var(--accent);display:flex;align-items:center;justify-content:center;gap:3px}.mark i{width:3px;border-radius:2px;background:white;height:13px}.mark i:nth-child(2){height:21px}.mark i:nth-child(3){height:9px}.badge{font-size:12px;color:var(--muted);border:1px solid #dadcd3;padding:6px 11px;border-radius:20px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.9px;font-weight:700;color:var(--accent);margin:0 0 9px}h1{font-size:clamp(32px,5vw,48px);font-weight:750;letter-spacing:-1.8px;line-height:1.12;margin:0 0 14px}.intro{color:var(--muted);max-width:560px;margin:0 0 29px;font-size:16px}.layout{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:start}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:26px}.tabs{display:flex;background:#f2f3ef;border-radius:12px;padding:4px;gap:4px;margin-bottom:25px}.tab{flex:1;border:0;background:none;color:var(--muted);padding:11px 8px;border-radius:9px;font-weight:650}.tab[aria-selected=true]{background:white;color:var(--ink);box-shadow:0 2px 7px #242c2710}.section-title{font-size:13px;font-weight:700;display:flex;align-items:center;gap:9px;margin:24px 0 13px}.section-title:first-child{margin-top:0}.step{font-size:10px;font-weight:750;color:var(--muted);background:#f2f3ef;width:22px;height:22px;display:grid;place-items:center;border-radius:50%}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.duration{grid-template-columns:repeat(3,1fr);gap:12px}label{display:block;font-size:12px;font-weight:550;color:var(--muted);margin-bottom:7px}input,select{width:100%;min-height:48px;border:1px solid #dfe2d9;border-radius:10px;background:#fcfcfa;color:var(--ink);padding:10px 12px}input:focus,select:focus{outline:2px solid var(--accent);outline-offset:2px}input:invalid{border-color:var(--accent)}.quick{display:flex;gap:7px;margin:12px 0 0;flex-wrap:wrap}.quick button{font-size:12px;border:1px solid var(--line);border-radius:7px;background:white;padding:5px 11px;color:var(--muted)}.quick button:hover{color:var(--accent);border-color:var(--accent)}.divider{height:1px;background:var(--line);margin:23px 0}.hint{font-size:12px;line-height:1.6;color:var(--muted);margin:12px 0 0}.full{grid-column:1/-1}.result{background:var(--green);color:white;border:0;padding:29px;position:relative;overflow:hidden}.result:after{content:"";position:absolute;right:-50px;top:-50px;width:170px;height:170px;border:28px solid #ffffff06;border-radius:50%;pointer-events:none}.result-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.result-label{font-size:12px;letter-spacing:.3px;color:#d4e2d4}.unit-button{border:1px solid #ffffff35;background:transparent;color:#edf5ed;border-radius:7px;padding:4px 8px;font-size:11px}.amount{font-size:clamp(44px,6vw,62px);letter-spacing:-2px;font-weight:700;line-height:1.12;margin-top:20px;overflow-wrap:anywhere}.amount small{font-size:23px;font-weight:450;letter-spacing:-.5px}.subresult{font-size:12px;color:#c8dbcb;margin:8px 0 25px}.meter{height:6px;background:#ffffff1c;border-radius:10px;overflow:hidden;margin:20px 0 7px}.meter span{display:block;height:100%;width:0;background:#b9d2b6;border-radius:10px;transition:width .2s}.meter-label{display:flex;justify-content:space-between;font-size:11px;color:#d4e2d4}.result-details{border-top:1px solid #ffffff24;padding-top:19px;font-size:13px;display:grid;gap:10px}.result-row{display:flex;justify-content:space-between;gap:12px}.result-row span{color:#d4e2d4}.result-row strong{text-align:right;font-weight:550}.result-note{font-size:11px;color:#d4e2d4;margin:20px 0 0}.storage{margin-top:18px;padding:22px}.storage h2{font-size:14px;margin:0 0 4px;font-weight:700}.storage p{font-size:12px;color:var(--muted);margin:0 0 14px}.capacity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.capacity{border:1px solid var(--line);border-radius:10px;padding:12px 6px;text-align:center}.capacity b{font-size:13px;display:block}.capacity span{font-size:11px;color:var(--muted);display:block;margin-top:4px}.footnote{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px;margin-top:22px;padding:0 4px}.footnote p{margin:0}.error{color:#f8d7a5;font-size:12px;margin:12px 0 0}.explain{margin-top:24px;padding:18px 0;border-top:1px solid #dedfd7;font-size:12px;color:var(--muted)}summary{cursor:pointer;font-weight:600;color:var(--ink);padding:3px 0}details p{max-width:850px;margin:12px 0 0}button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}[hidden]{display:none!important}@media(max-width:720px){main{padding:22px 16px max(22px,env(safe-area-inset-bottom))}header{margin-bottom:31px}.layout{grid-template-columns:1fr;gap:16px}.card{padding:21px;border-radius:18px}h1{letter-spacing:-1.2px}.intro{font-size:14px;margin-bottom:22px}.result{padding:25px}.amount{font-size:52px}.footnote{display:block}.footnote p+p{margin-top:5px}.badge{font-size:10px}.storage{margin-top:14px}.grid{gap:13px}.duration{gap:10px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Вес записи</div><span class="badge">Бесплатно · без регистрации</span></header>
+<p class="eyebrow">Сначала посчитать. Потом записать.</p>
+<h1>Сколько места займёт запись?</h1>
+<p class="intro">Мультитрек с концерта или видео со съёмки — узнайте объём и подготовьте носитель заранее.</p>
+<div class="layout">
+<section class="card" aria-label="Параметры записи">
+<div class="tabs" role="tablist" aria-label="Тип записи"><button class="tab" id="audio-tab" type="button" role="tab" aria-selected="true" aria-controls="audio-panel">♫ Аудио / мультитрек</button><button class="tab" id="video-tab" type="button" role="tab" aria-selected="false" aria-controls="video-panel" tabindex="-1">▸ Видео</button></div>
+<form id="settings" novalidate>
+<div class="section-title"><span class="step">01</span>Длительность записи</div>
+<div class="grid duration"><div><label for="hours">Часы</label><input id="hours" type="number" inputmode="numeric" min="0" max="9999" step="1" value="1" required></div><div><label for="minutes">Минуты</label><input id="minutes" type="number" inputmode="numeric" min="0" max="59" step="1" value="0" required></div><div><label for="seconds">Секунды</label><input id="seconds" type="number" inputmode="numeric" min="0" max="59" step="1" value="0" required></div></div>
+<div class="quick" aria-label="Готовая длительность"><button type="button" data-duration="1800">30 мин</button><button type="button" data-duration="3600">1 час</button><button type="button" data-duration="7200">2 часа</button><button type="button" data-duration="10800">3 часа</button></div>
+<div class="divider"></div>
+<div id="audio-panel" role="tabpanel" aria-labelledby="audio-tab">
+<div class="section-title"><span class="step">02</span>Настройки аудио</div>
+<div class="grid"><div><label for="tracks">Количество дорожек</label><input id="tracks" type="number" inputmode="numeric" min="1" max="1024" step="1" value="32" required></div><div><label for="channels">Каналов в дорожке</label><select id="channels"><option value="1">Моно · 1 канал</option><option value="2">Стерео · 2 канала</option></select></div>
+<div class="full"><label for="audio-format">Формат записи</label><select id="audio-format"><option value="pcm">WAV / AIFF · без сжатия</option><option value="compressed">MP3 / AAC · по битрейту</option></select></div>
+<div data-pcm><label for="sample-rate">Частота дискретизации</label><select id="sample-rate"><option value="44100">44,1 кГц</option><option value="48000" selected>48 кГц</option><option value="88200">88,2 кГц</option><option value="96000">96 кГц</option><option value="192000">192 кГц</option></select></div>
+<div data-pcm><label for="bit-depth">Разрядность</label><select id="bit-depth"><option value="16">16 бит</option><option value="24" selected>24 бита</option><option value="32">32 бита / float</option></select></div>
+<div class="full" data-compressed hidden><label for="audio-bitrate">Битрейт всей дорожки, кбит/с</label><input id="audio-bitrate" type="number" inputmode="decimal" min="1" max="10000" step="any" value="320" required><p class="hint">Для стерео укажите общий битрейт двух каналов. Число каналов не умножает его ещё раз.</p></div></div>
+<p class="hint" id="audio-hint">32 моно-дорожки = 32 канала. Если записываете 32 канала пульта, выберите «Моно».</p>
+</div>
+<div id="video-panel" role="tabpanel" aria-labelledby="video-tab" hidden>
+<div class="section-title"><span class="step">02</span>Настройки видео</div>
+<div class="grid"><div><label for="resolution">Разрешение</label><select id="resolution"><option value="720">HD · 1280 × 720</option><option value="1080" selected>Full HD · 1920 × 1080</option><option value="2160">4K UHD · 3840 × 2160</option><option value="4320">8K UHD · 7680 × 4320</option></select></div><div><label for="fps">Кадров в секунду</label><select id="fps"><option value="24">24 fps</option><option value="25">25 fps</option><option value="30" selected>30 fps</option><option value="50">50 fps</option><option value="60">60 fps</option><option value="120">120 fps</option></select></div>
+<div><label for="codec">Кодек для ориентира</label><select id="codec"><option value="h264">H.264</option><option value="hevc">H.265 / HEVC</option></select></div><div><label for="cameras">Количество камер</label><input id="cameras" type="number" inputmode="numeric" min="1" max="1024" step="1" value="1" required></div>
+<div class="full"><label for="video-bitrate">Битрейт видео одной камеры, Мбит/с</label><input id="video-bitrate" type="number" inputmode="decimal" min="0.001" max="100000" step="any" value="12" required><div class="quick"><button type="button" id="use-preset">Подставить ориентир</button></div><p class="hint" id="preset-note">Ориентир: 12 Мбит/с. Укажите реальный битрейт камеры для более точного расчёта.</p></div>
+<div class="full"><label for="video-audio">Звук одной камеры, кбит/с</label><input id="video-audio" type="number" inputmode="decimal" min="0" max="100000" step="any" value="256" required></div></div>
+<p class="hint">Разрешение и fps подставляют примерный битрейт. При ручном вводе объём определяется битрейтом. Для VBR нужен средний битрейт; ProRes и RAW считайте по данным камеры.</p>
+</div>
+<div class="divider"></div>
+<div class="grid"><div><label for="reserve">Запас на носителе</label><select id="reserve"><option value="0">Без запаса</option><option value="10">+10%</option><option value="20" selected>+20%</option><option value="30">+30%</option></select></div><div><label for="capacity">Свободно на носителе, ГБ</label><input id="capacity" type="number" inputmode="decimal" min="0.001" max="10000000" step="any" value="64" required></div></div>
+</form>
+</section>
+<aside aria-label="Результат расчёта">
+<section class="card result" aria-live="polite" aria-atomic="true"><div class="result-top"><span class="result-label">Объём записи</span><button class="unit-button" id="unit-toggle" type="button" aria-label="Переключить единицы на GiB">ГБ / GiB</button></div><div class="amount" id="amount">16,59 <small>ГБ</small></div><p class="subresult" id="subresult">За 1 час · 32 моно-дорожки</p><div class="result-details"><div class="result-row"><span id="reserve-label">С запасом 20%</span><strong id="with-reserve">19,91 ГБ</strong></div><div class="result-row"><span>Одна минута</span><strong id="per-minute">276,48 МБ</strong></div><div class="result-row"><span id="single-label">Одна дорожка</span><strong id="single-size">518,4 МБ</strong></div></div><div class="meter" aria-hidden="true"><span id="meter-fill"></span></div><div class="meter-label"><span id="capacity-label">Носитель 64 ГБ</span><span id="capacity-percent">31% с запасом</span></div><p class="result-note" id="fit-note">Места достаточно для этой записи.</p><p id="error" class="error" role="alert" hidden></p></section>
+<section class="card storage"><h2>Сколько времени поместится?</h2><p>При этих настройках и выбранном запасе.</p><div class="capacity-grid"><div class="capacity"><b>32 ГБ</b><span id="time-32">—</span></div><div class="capacity"><b>64 ГБ</b><span id="time-64">—</span></div><div class="capacity"><b>128 ГБ</b><span id="time-128">—</span></div></div></section>
+</aside></div>
+<div class="footnote"><p>Все вычисления выполняются на вашем устройстве.</p><p>1 ГБ = 1 000 000 000 байт · 1 GiB = 1 073 741 824 байта</p></div>
+<details class="explain"><summary>Как считается объём?</summary><p>Аудио без сжатия: секунды × частота в Гц × разрядность / 8 × каналы в дорожке × дорожки. Для MP3 / AAC: секунды × битрейт в бит/с / 8 × дорожки. Для видео: секунды × (битрейт видео + битрейт звука) / 8 × камеры.</p><p>Это объём медиаданных: заголовки файлов, контейнер и служебные данные не включены. Запас помогает подготовить носитель, но не увеличивает размер самой записи. Ориентиры видео — условные стартовые значения, не спецификации камеры; H.265 использует половину ориентира H.264. Фактический объём зависит от настроек записи и среднего битрейта.</p><p>Носители здесь указаны в десятичных ГБ. Используйте фактически свободное место: форматирование и другие файлы уменьшают доступный объём. WAV больше 4 ГБ на файл требует поддержки RF64 / W64 либо разбиения рекордером.</p><p>Калькулятор бесплатный и не требует регистрации. Сохранённый HTML-файл работает без сети.</p></details>
+</main>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+let mode = 'audio', binary = false, manualBitrate = false;
+const fieldIds = ['hours','minutes','seconds','tracks','channels','audio-format','sample-rate','bit-depth','audio-bitrate','resolution','fps','codec','cameras','video-bitrate','video-audio','reserve','capacity'];
+const num = id => Number($(id).value);
+const formatter = new Intl.NumberFormat('ru-RU',{maximumFractionDigits:2});
+function pretty(bytes) {
+  const base = binary ? 1024 : 1000;
+  const units = binary ? ['Б','KiB','MiB','GiB','TiB','PiB'] : ['Б','КБ','МБ','ГБ','ТБ','ПБ'];
+  let value = bytes, index = 0;
+  while (value >= base && index < units.length-1) { value /= base; index++; }
+  return {value:formatter.format(value),unit:units[index]};
+}
+function sizeText(bytes) { const p=pretty(bytes); return p.value+' '+p.unit; }
+function timeText(seconds) {
+  if (!Number.isFinite(seconds)) return '—';
+  if (seconds < 60) return Math.floor(seconds)+' сек';
+  const minutes=Math.floor(seconds/60), hours=Math.floor(minutes/60);
+  return hours ? hours+' ч'+(minutes%60?' '+minutes%60+' мин':'') : minutes+' мин';
+}
+function presetRate() { return ({720:6,1080:12,2160:50,4320:160}[num('resolution')])*(num('fps')/30)*($('codec').value==='hevc'?0.5:1); }
+function updatePreset(force) {
+  const rate=Math.round(presetRate()*100)/100;
+  if(force || !manualBitrate) $('video-bitrate').value=rate;
+  $('preset-note').textContent='Ориентир: '+formatter.format(rate)+' Мбит/с. '+(manualBitrate&&!force?'Используется ваш битрейт.':'Для более точного расчёта укажите битрейт камеры.');
+}
+function audioBytesPerSecond(p) {
+  return p.format==='pcm' ? p.sampleRate*p.bitDepth/8*p.channels*p.tracks : p.bitrate*1000/8*p.tracks;
+}
+function videoBytesPerSecond(p) { return (p.bitrate*1e6+p.audioBitrate*1000)/8*p.cameras; }
+function syncPanels() {
+  for (const id of ['audio','video']) {
+    const active=mode===id;
+    $(id+'-tab').setAttribute('aria-selected',String(active));
+    $(id+'-tab').tabIndex=active?0:-1;
+    $(id+'-panel').hidden=!active;
+    for(const input of $(id+'-panel').querySelectorAll('input,select')) input.disabled=!active;
+  }
+  const compressed=$('audio-format').value==='compressed';
+  for(const el of document.querySelectorAll('[data-pcm]')) {el.hidden=compressed;el.querySelector('select').disabled=mode!=='audio'||compressed;}
+  document.querySelector('[data-compressed]').hidden=!compressed;
+  $('audio-bitrate').disabled=mode!=='audio'||!compressed;
+  $('channels').disabled=mode!=='audio'||compressed;
+}
+function persist() {try {const fields={};for(const id of fieldIds)fields[id]=$(id).value;localStorage.setItem('recording-size-v1',JSON.stringify({fields,mode,binary,manualBitrate}));} catch {}}
+function render() {
+  syncPanels();
+  const invalid=[...$('settings').querySelectorAll('input,select')].find(el=>!el.disabled&&!el.checkValidity());
+  const duration=num('hours')*3600+num('minutes')*60+num('seconds');
+  if(invalid || duration<=0) {
+    $('amount').textContent='—';$('subresult').textContent='Проверьте параметры записи';
+    for(const id of ['with-reserve','per-minute','single-size','capacity-percent'])$(id).textContent='—';
+    for(const capacity of [32,64,128])$('time-'+capacity).textContent='—';
+    $('error').textContent=invalid?'Проверьте поле «'+document.querySelector('label[for="'+invalid.id+'"]').textContent+'».':'Укажите длительность больше нуля.';
+    $('error').hidden=false;$('meter-fill').style.width='0%';$('fit-note').textContent='';return;
+  }
+  $('error').hidden=true;
+  const rate=mode==='audio'?audioBytesPerSecond({format:$('audio-format').value,sampleRate:num('sample-rate'),bitDepth:num('bit-depth'),channels:num('channels'),tracks:num('tracks'),bitrate:num('audio-bitrate')}):videoBytesPerSecond({bitrate:num('video-bitrate'),audioBitrate:num('video-audio'),cameras:num('cameras')});
+  const bytes=rate*duration, reserveFactor=1+num('reserve')/100, total=bytes*reserveFactor, capacity=num('capacity')*1e9;
+  const p=pretty(bytes);
+  $('amount').replaceChildren(document.createTextNode(p.value+' ')); const unit=document.createElement('small');unit.textContent=p.unit;$('amount').append(unit);
+  const count=mode==='audio'?num('tracks'):num('cameras');
+  $('subresult').textContent=timeText(duration)+' · '+count+(mode==='audio'?' дор. / '+(num('channels')===1?'моно':'стерео'):' камер(ы)');
+  $('reserve-label').textContent=num('reserve')?'С запасом '+num('reserve')+'%':'Без запаса';
+  $('with-reserve').textContent=sizeText(total);$('per-minute').textContent=sizeText(rate*60);
+  $('single-label').textContent=mode==='audio'?'Одна дорожка':'Одна камера';$('single-size').textContent=sizeText(bytes/count);
+  $('capacity-label').textContent='Свободно '+formatter.format(num('capacity'))+' ГБ';
+  const percent=total/capacity*100;$('capacity-percent').textContent=formatter.format(percent)+'%'+(num('reserve')?' с запасом':'');
+  $('meter-fill').style.width=Math.min(100,percent)+'%';$('meter-fill').style.background=percent>100?'#f3a984':'#b9d2b6';
+  $('fit-note').textContent=total<=capacity?'Места достаточно. Останется '+sizeText(capacity-total)+' с учётом запаса.':'Не хватает '+sizeText(total-capacity)+' с учётом запаса.';
+  for(const capacity of [32,64,128])$('time-'+capacity).textContent=timeText(capacity*1e9/(rate*reserveFactor));
+  $('audio-hint').textContent=$('audio-format').value==='pcm'?num('tracks')+' '+(num('channels')===1?'моно':'стерео')+'-дорожек = '+num('tracks')*num('channels')+' каналов. Для каналов пульта обычно выбирают «Моно».':'Расчёт по постоянному или среднему битрейту. Для VBR фактический объём может отличаться.';
+  $('unit-toggle').setAttribute('aria-label','Переключить единицы на '+(binary?'ГБ':'GiB'));
+  persist();
+}
+function setMode(next) {mode=next;render();}
+$('audio-tab').addEventListener('click',()=>setMode('audio'));
+$('video-tab').addEventListener('click',()=>setMode('video'));
+document.querySelector('[role=tablist]').addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();setMode(event.key==='Home'?'audio':event.key==='End'?'video':mode==='audio'?'video':'audio');$(mode+'-tab').focus();}});
+$('settings').addEventListener('submit',event=>event.preventDefault());
+$('settings').addEventListener('input',event=>{
+  if(event.target.id==='video-bitrate'){manualBitrate=true;updatePreset(false);}
+  if(['resolution','fps','codec'].includes(event.target.id))updatePreset(false);
+  render();
+});
+for(const button of document.querySelectorAll('[data-duration]'))button.addEventListener('click',()=>{const duration=Number(button.dataset.duration);$('hours').value=Math.floor(duration/3600);$('minutes').value=Math.floor(duration%3600/60);$('seconds').value=duration%60;render();});
+$('use-preset').addEventListener('click',()=>{manualBitrate=false;updatePreset(true);render();});
+$('unit-toggle').addEventListener('click',()=>{binary=!binary;render();});
+try {
+  const saved=JSON.parse(localStorage.getItem('recording-size-v1'));
+  if(saved){for(const id of fieldIds)if(typeof saved.fields?.[id]==='string')$(id).value=saved.fields[id];mode=saved.mode==='video'?'video':'audio';binary=saved.binary===true;manualBitrate=saved.manualBitrate===true;}
+}catch{}
+updatePreset(false);render();
+</script>
+</body>
+</html>
